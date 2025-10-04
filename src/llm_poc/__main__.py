@@ -1,4 +1,3 @@
-from src.llm_poc.pipeline import forecast_simple
 from src.llm_poc.pipeline import build_stock_market_pipeline
 from src.retrievers.stock_market import get_stock_market_retriever
 from src.tools.stock_market_tool import retriever_tool
@@ -33,9 +32,12 @@ llm = get_gemini_llm(model="gemini-2.0-flash", temperature=0.2)
 qa = build_rag_qa_chain(retriever, llm)
 
 # 5) Ask
-question = "Summarize the Q2 2024 stock market performance."
+question = "What is Meta's market capitalization?"
 answer = qa.invoke({"question": question})
 print(answer)
+
+
+#poetry run python -m src.llm_poc
 
 """
 if __name__ == "__main__":

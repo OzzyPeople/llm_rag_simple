@@ -7,6 +7,11 @@ poetry.lock
 *.ipynb~
 notebooks/
 
+# Ignore Chroma DB files
+chroma_db/
+*.sqlite3
+*.bin
+
 #data
 data/
 
